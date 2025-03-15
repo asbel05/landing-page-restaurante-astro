@@ -67,9 +67,5 @@ Las imágenes están optimizadas para reducir el tiempo de carga.
 
 2. **`Bootstrap 5`**: Framework CSS para diseño responsive y componentes preconstruidos.
 
-3. **`Bootstrap Icons`**: Iconos gratuitos y de alta calidad para el sitio.
-
-4. **`AOS`**: Biblioteca para animaciones al hacer scroll.
-
 
 ## Desarrollado por: Asbel Cristobal Avila
