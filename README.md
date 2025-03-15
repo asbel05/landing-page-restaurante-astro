@@ -1,8 +1,6 @@
 # Food Made Good - Landing Page para Restaurante
 Este proyecto es un sitio web moderno y responsive para un restaurante, construido con **Astro** y **Bootstrap 5**.
 
----
-
 ## 🚀 Instrucciones para ejecutar el proyecto localmente
 
 Sigue estos pasos para ejecutar el proyecto en tu máquina:
@@ -25,7 +23,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina:
    Abre el proyecto en tu navegador:
    Visita **http://localhost:3000** para ver el sitio.
 
----
+
 
 ## 🏗️ Explicación de la estructura
 
@@ -48,31 +46,30 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina:
 5. **`README.md`**:
    - Este archivo, que proporciona una guía completa sobre el proyecto.
 
----
+
 
 ## 🎨 Decisiones de diseño
-**`Diseño Responsive`**:
+1. **`Diseño Responsive`**:
 - El sitio está diseñado para funcionar perfectamente en dispositivos móviles, tablets y desktop.
 Se utilizó Bootstrap 5 para garantizar un diseño responsive y consistente.
 
-**`Animaciones`**:
+2. **`Animaciones`**:
 - Se integró AOS (Animate On Scroll) para agregar animaciones sutiles al hacer scroll.
 
-**`Optimización de imágenes`**:
+3. **`Optimización de imágenes`**:
 - Todas las imágenes usan el atributo loading="lazy" para cargarse de manera eficiente.
 Las imágenes están optimizadas para reducir el tiempo de carga.
 
----
+
 
 ## 🛠️ Tecnologías utilizadas
-**`Astro`**: Framework moderno para construir sitios estáticos rápidos y optimizados.
+1. **`Astro`**: Framework moderno para construir sitios estáticos rápidos y optimizados.
 
-**`Bootstrap 5`**: Framework CSS para diseño responsive y componentes preconstruidos.
+2. **`Bootstrap 5`**: Framework CSS para diseño responsive y componentes preconstruidos.
 
-**`Bootstrap Icons`**: Iconos gratuitos y de alta calidad para el sitio.
+3. **`Bootstrap Icons`**: Iconos gratuitos y de alta calidad para el sitio.
 
-**`AOS`**: Biblioteca para animaciones al hacer scroll.
+4. **`AOS`**: Biblioteca para animaciones al hacer scroll.
 
----
 
 ## Desarrollado por: Asbel Cristobal Avila
