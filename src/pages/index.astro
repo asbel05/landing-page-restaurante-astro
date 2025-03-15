@@ -1,0 +1,25 @@
+---
+// index.astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Menu from "../components/Menu.astro";
+import Nosotros from "../components/Nosotros.astro";
+import Testimonios from "../components/Testimonios.astro";
+import Contacto from "../components/Contacto.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Food Made Good - Inicio";
+---
+
+<Layout title={pageTitle}>
+  <Header />
+  <main>
+    <Hero />
+    <Menu />
+    <Nosotros />
+    <Testimonios />
+    <Contacto />
+  </main>
+  <Footer />
+</Layout>

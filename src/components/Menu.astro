@@ -1,0 +1,115 @@
+---
+const menuItems = [
+  {
+    id: 1,
+    name: "Ají de Gallina",
+    description: "Pechuga de pollo deshilachada en una cremosa salsa de ají amarillo, con nueces y queso.",
+    price: "S/. 13.50",
+    image: "/images/menu/aji-de-gallina.jpg",
+    category: "Principales"
+  },
+  {
+    id: 2,
+    name: "Anticucho",
+    description: "Brochetas de corazón de res marinadas en especias peruanas y asadas a la parrilla.",
+    price: "S/. 15.00",
+    image: "/images/menu/anticucho.jpg",
+    category: "Entrantes"
+  },
+  {
+    id: 3,
+    name: "Ceviche",
+    description: "Fresco pescado marinado en limón con cebolla morada, cilantro y un toque de ají.",
+    price: "S/. 24.50",
+    image: "/images/menu/ceviche.jpg",
+    category: "Entrantes"
+  },
+  {
+    id: 4,
+    name: "Tallarin Saltado",
+    description: "Fideos salteados al wok con carne, verduras frescas y un toque de salsa de soja.",
+    price: "S/. 13.50",
+    image: "/images/menu/tallarin.jpg",
+    category: "Principales"
+  }
+];
+---
+
+<section id="menu" class="section-padding">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-down">
+      <h2 class="display-5 fw-bold">Nuestro Menú</h2>
+      <p class="text-muted">Descubre nuestra selección de platos destacados</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {menuItems.map((item, index) => (
+        <div class="col" data-aos="fade-down">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="row g-0 h-100">
+              <div class="col-md-5 position-relative">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="img-fluid rounded-start h-100 object-fit-cover"
+                  loading="lazy"
+                />
+                <span class="position-absolute top-0 start-0 badge bg-primary m-3">{item.category}</span>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body d-flex flex-column h-100">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0">{item.name}</h5>
+                    <p class="text-primary fw-bold mb-0">{item.price}</p>
+                  </div>
+                  <p class="card-text text-muted flex-grow-1">{item.description}</p>
+                  <div class="mt-3">
+                    <button class="btn-primary btn-custom w-100 py-2">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-primary btn-custom btn-lg px-5 py-3" data-aos="zoom-in-up">Ver carta completa</a>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .object-fit-cover {
+    object-fit: cover;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>

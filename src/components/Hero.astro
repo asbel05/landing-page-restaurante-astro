@@ -1,0 +1,74 @@
+---
+// Hero.astro
+---
+
+<section id="inicio" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8 col-md-10">
+        <h1 class="display-3 fw-bold text-white mb-4" data-aos="fade-up">
+          Una experiencia culinaria inolvidable
+        </h1>
+        <p class="lead text-white mb-5" data-aos="fade-up">
+          Sabores auténticos con ingredientes frescos y locales. Disfruta de nuestra cocina de autor en un ambiente acogedor.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#menu" class="btn btn-primary btn-lg px-4 py-2 btn-custom" data-aos="fade-up" id="menuButton">Ver menú</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menuButton') as HTMLAnchorElement | null;
+
+    if (menuButton) {
+      menuButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const targetId = menuButton.getAttribute('href');
+        const targetSection = targetId ? document.querySelector(targetId) : null;
+
+        if (targetSection) {
+          const header = document.querySelector('header') as HTMLElement | null;
+          const headerHeight = header?.offsetHeight || 0;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+          const finalPosition = targetPosition - headerHeight;
+
+          window.scrollTo({
+            top: finalPosition,
+            behavior: 'smooth',
+          });
+        }
+      });
+    }
+  });
+</script>

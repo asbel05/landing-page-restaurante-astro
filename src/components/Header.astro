@@ -1,0 +1,140 @@
+---
+// Header.astro
+---
+
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          src="/images/logo.svg"
+          alt="Restaurante Sabores"
+          class="logo-img"
+          loading="lazy"
+        />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto" data-aos="flip-up">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">MENÚ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre-nosotros">NOSOTROS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonios">TESTIMONIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  .logo-img {
+    width: 80px;
+    height: auto;
+    max-height: 100px;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: var(--text-color) !important;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-color) !important;
+  }
+
+  @media (max-width: 992px) {
+    .nav-link.btn {
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (header && sections.length > 0 && navLinks.length > 0) {
+      const getScrollOffset = () => {
+        return header.offsetHeight;
+      };
+
+      const smoothScrollTo = (target) => {
+        const offset = getScrollOffset();
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+        const finalPosition = targetPosition - offset;
+
+        window.scrollTo({
+          top: finalPosition,
+          behavior: 'smooth',
+        });
+      };
+
+      const updateSectionScrollMargin = () => {
+        const offset = getScrollOffset();
+
+        sections.forEach((section) => {
+          section.style.scrollMarginTop = `${offset}px`;
+        });
+      };
+
+      updateSectionScrollMargin();
+
+      window.addEventListener('resize', updateSectionScrollMargin);
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (navbarCollapse.classList.contains('show')) {
+            const toggleButton = document.querySelector('.navbar-toggler');
+            toggleButton.click();
+          }
+
+          // Desplazamiento suave
+          const targetId = link.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            e.preventDefault();
+            smoothScrollTo(targetSection);
+          }
+        });
+      });
+    }
+  });
+</script>

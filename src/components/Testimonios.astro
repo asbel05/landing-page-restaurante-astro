@@ -1,0 +1,101 @@
+---
+// Testimonials.astro
+const testimonials = [
+  {
+    id: 1,
+    name: "Ana Martínez",
+    image: "/images/testimonios/persona1.jpg",
+    role: "Cliente frecuente",
+    text: "Cada visita es una nueva aventura culinaria. Los sabores son excepcionales y el servicio siempre atento. Es mi restaurante favorito."
+  },
+  {
+    id: 2,
+    name: "Carlos Rodríguez",
+    image: "/images/testimonios/persona2.jpg",
+    role: "Chef profesional",
+    text: "Como chef, aprecio la creatividad y el respeto por los ingredientes que se refleja en cada plato. La atención al detalle es impresionante."
+  },
+  {
+    id: 3,
+    name: "Miguel Sánchez",
+    image: "/images/testimonios/persona3.jpg",
+    role: "Crítico gastronómico",
+    text: "Un equilibrio perfecto entre tradición e innovación. La carta de vinos es excelente y complementa a la perfección la propuesta culinaria."
+  }
+];
+---
+
+<section id="testimonios" class="section-padding">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 class="display-5 fw-bold">Lo que dicen nuestros clientes</h2>
+      <p class="text-muted">Experiencias que hablan por sí mismas</p>
+    </div>
+    
+    <div class="row">
+      <div class="col-12" data-aos="fade-up">
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            {testimonials.map((testimonial, index) => (
+              <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                <div class="card border-0 shadow-sm mx-auto" style="max-width: 800px;">
+                  <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                      <img src={testimonial.image} class="rounded-circle mb-3" width="150" height="140" alt={testimonial.name} />
+                      <h5 class="mb-0">{testimonial.name}</h5>
+                      <p class="text-muted small">{testimonial.role}</p>
+                    </div>
+                    <div class="text-center mb-3">
+                      <i class="fas fa-quote-left fa-2x text-primary opacity-50"></i>
+                    </div>
+                    <p class="text-center lead mb-4">{testimonial.text}</p>
+                    <div class="text-center">
+                      <div class="d-inline-block">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+          <div class="carousel-indicators position-relative mt-4">
+            {testimonials.map((_, index) => (
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to={index} class={index === 0 ? 'active' : ''} aria-current={index === 0 ? 'true' : 'false'}></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    padding: 1rem;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+  }
+  
+  .carousel-indicators .active {
+    opacity: 1;
+  }
+</style>

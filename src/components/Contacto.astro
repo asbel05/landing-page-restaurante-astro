@@ -1,0 +1,150 @@
+<section id="contacto" class="section-padding bg-light" data-aos="fade-left">
+    <div class="container">
+        <h2 class="text-center mb-5 display-5 fw-bold">
+            Contáctanos
+        </h2>
+
+        <div class="row g-5 align-items-center">
+            <!-- Formulario -->
+            <div class="col-lg-6">
+                <form class="needs-validation" id="contactForm" novalidate>
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            id="nombre"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu nombre
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input
+                            type="email"
+                            class="form-control form-control-lg"
+                            id="email"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Ingresa un correo válido
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea
+                            class="form-control form-control-lg"
+                            id="mensaje"
+                            rows="5"
+                            placeholder="¿Cómo podemos ayudarte?"
+                            required
+                        ></textarea>
+                        <div class="invalid-feedback">Escribe tu mensaje</div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-custom align-items-center btn-lg"
+                        aria-label="Enviar mensaje"
+                    >
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img
+                        src="/images/contacto.jpg"
+                        alt="Nuestro equipo de atención al cliente"
+                        class="img-fluid rounded shadow-lg"
+                        loading="lazy"
+                        data-aos="zoom-in"
+                    />
+                    <div class="position-absolute bottom-0 start-0 p-4 bg-dark bg-opacity-75 text-white w-100">
+                        <h4 class="mb-3">Nuestro equipo de atención al cliente</h4>
+                        <p class="mb-0">Estamos aquí para ayudarte en lo que necesites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .btn-icon {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% !important;
+    }
+
+    .invalid-feedback {
+        font-size: 0.9rem;
+    }
+
+    #contacto {
+        scroll-margin-top: 80px;
+    }
+
+    .rounded {
+        border-radius: 15px !important;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    @media (max-width: 768px) {
+        .col-lg-6 {
+            margin-bottom: 2rem;
+        }
+
+        .position-absolute {
+            position: static !important;
+            background: none !important;
+            color: var(--text-color) !important;
+            padding: 1rem 0 !important;
+        }
+    }
+</style>
+
+<script>
+    import Swal from "sweetalert2";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById('contactForm') as HTMLFormElement;
+
+        if (!form) {
+            console.error("El formulario no fue encontrado en el DOM.");
+            return;
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add("was-validated");
+                return;
+            }
+
+            Swal.fire({
+                icon: "success",
+                title: "¡Mensaje enviado!",
+                text: "Nos pondremos en contacto contigo pronto",
+                confirmButtonColor: "#0d6efd",
+            });
+
+            form.reset();
+            form.classList.remove("was-validated");
+        });
+    });
+</script>

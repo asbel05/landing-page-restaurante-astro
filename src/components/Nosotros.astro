@@ -1,0 +1,60 @@
+---
+// components/Nosotros.astro
+---
+
+<section id="sobre-nosotros" class="section-padding bg-light">
+  <div class="container" data-aos="fade-right">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="position-relative">
+          <img
+            src="/images/nosotros.jpg"
+            alt="Nuestro restaurante"
+            class="img-fluid rounded shadow-lg"
+            loading="lazy"
+          />
+          <div class="position-absolute top-0 start-0 bg-primary rounded p-3 shadow-lg" style="transform: translate(-20%, -20%);">
+            <h3 class="text-white mb-0">Desde 2005</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-4">Nuestra Historia</h2>
+        <p class="text-primary lead mb-4">
+          Una pasión por la gastronomía que trasciende generaciones
+        </p>
+        <p class="mb-4">
+          Fundado en 2005 por la chef María López, Food Made Good nació con la visión de crear un espacio donde la tradición culinaria se fusiona con técnicas modernas e ingredientes de la más alta calidad.
+        </p>
+        <p class="mb-4">
+          Nuestro compromiso con los productos locales y de temporada nos ha permitido establecer relaciones duraderas con agricultores y productores de la región, asegurando que cada plato cuente una historia auténtica.
+        </p>
+        <p class="mb-4">
+          Con más de 15 años de experiencia, hemos evolucionado manteniendo siempre nuestra esencia: ofrecer una experiencia gastronómica memorable en un ambiente acogedor y elegante.
+        </p>
+        <div class="mt-4">
+          <p class="text-muted fst-italic">María López, Chef Fundadora</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 992px) {
+    .display-5 {
+      font-size: 2.5rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+  }
+</style>

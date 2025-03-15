@@ -1,0 +1,133 @@
+---
+// components/Footer.astro
+---
+
+<footer class="bg-primary section-padding text-white">
+  <div class="container">
+    <div class="row text-center text-lg-start">
+      <!-- Columna 1: Contacto -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h5 class="text-warning pb-3">Contacto</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2 d-flex align-items-center gap-2 justify-content-center justify-content-lg-start">
+            <i class="bi bi-geo-alt-fill text-warning"></i>
+            <span>Av. Huevito 5212, Surco</span>
+          </li>
+          <li class="mb-2 d-flex align-items-center gap-2 justify-content-center justify-content-lg-start">
+            <i class="bi bi-telephone-fill text-warning"></i>
+            <span>951243245</span>
+          </li>
+          <li class="mb-2 d-flex align-items-center gap-2 justify-content-center justify-content-lg-start">
+            <i class="bi bi-envelope-fill text-warning"></i>
+            <span>foodmadegood@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Horario de atención -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h5 class="text-warning pb-3">Horario de atención</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">Lunes a Sábado: 10:00 AM – 10:00 PM</li>
+          <li class="mb-2">Domingos: 12:00 PM – 9:00 PM</li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Enlaces útiles -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h5 class="text-warning pb-3">Enlaces útiles</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none hover-primary">Política de privacidad</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none hover-primary">Términos y condiciones</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none hover-primary">Preguntas frecuentes</a>
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none hover-primary">Trabaja con nosotros</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Síguenos -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h5 class="text-warning pb-3">Síguenos</h5>
+        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+          <a href="#" class="btn btn-outline-light btn-icon" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-icon" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-icon" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Derechos de autor -->
+    <div class="text-center mt-5 pt-4 border-top border-secondary">
+      <p class="mb-0">
+        &copy; 2025 Food Made Good. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .logo-img {
+    width: 100px;
+    height: auto;
+  }
+
+  .btn-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    transition: all 0.3s ease;
+  }
+
+  .btn-icon:hover {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    transform: translateY(-3px);
+  }
+
+  .hover-primary {
+    transition: color 0.3s ease;
+  }
+
+  .hover-primary:hover {
+    color: var(--secondary-color) !important;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      width: 80px;
+    }
+
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .section-padding {
+      padding: 3rem 0;
+    }
+
+    .col-lg-3 {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
